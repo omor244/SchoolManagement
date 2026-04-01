@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import { Button } from './components/ui/button'
+import { Input } from './components/ui/input'
+import { Card, CardContent, CardHeader, CardTitle } from './components/ui/card'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
@@ -10,23 +13,30 @@ function App() {
   return (
     <>
       <section id="center">
-        <div className="hero">
+        <Card className="max-w-lg mx-auto p-4">
+          <CardHeader>
+            <CardTitle>Welcome to shadcn + Tailwind</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
           <img src={reactLogo} className="framework" alt="React logo" />
           <img src={viteLogo} className="vite" alt="Vite logo" />
         </div>
+          </CardContent>
+        </Card>
         <div>
           <h1>Get started</h1>
           <p>
             Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
           </p>
         </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
+        <div className="space-y-4">
+          <Input placeholder="Type your name" className="w-full max-w-xs" />
+          <Button onClick={() => setCount((count) => count + 1)}>
+            Count is {count}
+          </Button>
+        </div>
       </section>
 
       <div className="ticks"></div>
