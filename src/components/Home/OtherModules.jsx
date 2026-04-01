@@ -44,7 +44,7 @@ const OtherModules = () => {
                         <motion.div
                             key={index}
                             variants={itemVariants}
-                            whileHover={{ scale: 1.02, boxShadow: "0 10px 30px -10px rgba(0,0,0,0.1)" }}
+                            whileHover={{ scale: 1.10, boxShadow: "0 10px 30px -10px rgba(0,0,0,0.1)" }}
                             className="bg-white p-5 rounded-xl border border-slate-100 flex items-center gap-5 group transition-all duration-300 cursor-default"
                         >
                             {/* Icon Container with subtle background hover effect */}

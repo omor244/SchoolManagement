@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer/Footer";
 import { Button } from "@/components/ui/button";
 import { Outlet } from "react-router";
 
@@ -7,11 +8,15 @@ const MainLayOut = () => {
     return (
         <div>
            
-            <header></header>
+            <header>
+                
+            </header>
             <main>
                 <Outlet/>
             </main>
-            <footer></footer>
+            <div>
+                <Footer/>
+            </div>
         </div>
     );
 };

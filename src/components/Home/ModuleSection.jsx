@@ -1,53 +1,73 @@
-
+import React from 'react';
 import { motion } from 'framer-motion';
-
-import { modules } from '../Data/Data';
+import { modules, positions } from '../Data/Data';
+import { Logo } from '../Logo/Logo';
 
 const ModuleSection = () => {
    
 
+
     return (
-        <section className="py-20 bg-slate-50 overflow-hidden">
+        <section className="py-24 bg-white overflow-hidden font-sans">
             <div className="max-w-7xl mx-auto px-6 text-center">
 
-                {/* Updated Title Color (Indigo/Slate instead of Purple) */}
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    className="inline-block  text-white px-8 py-3 rounded-xl mb-4 "
+                    className="inline-block bg-gradient-to-r from-orange-400 to-pink-500 text-white px-8 py-2 rounded-full font-bold text-lg shadow-lg mb-6"
                 >
-                    <div className="inline-block bg-gradient-to-r from-orange-400 to-pink-500 text-white px-8 py-2 rounded-lg font-bold text-lg shadow-lg">
-                        “স্কুল৩৬০” শিক্ষা ব্যবস্থাপনা সফটওয়্যার
-                    </div>
-                 
+                    “স্কুল৩৬০” শিক্ষা ব্যবস্থাপনা সফটওয়্যার
                 </motion.div>
 
-                <h2 className="text-4xl font-black text-slate-800 mb-16">মূল মডিউল</h2>
+                <h2 className="text-4xl font-black text-slate-800 mb-20">মূল মডিউলসমূহ</h2>
 
-                <div className="relative flex flex-col items-center">
+                {/* Grid Container */}
+                <div className="relative max-w-4xl mx-auto">
 
-                    {/* Central Logo Placeholder */}
-                    <div className="hidden lg:flex absolute inset-0 items-center justify-center pointer-events-none">
-                        <div className="w-64 h-32 bg-white border-4 border-dashed border-slate-200 rounded-3xl flex items-center justify-center shadow-inner">
-                            <span className="text-slate-400 font-bold text-2xl italic">School 360</span>
+                    {/* Desktop Circular Layout using Grid */}
+                    <div className="hidden lg:grid grid-cols-9 grid-rows-9 gap-4 items-center justify-items-center h-[600px]">
+
+                        <div className="col-start-4 col-span-3 row-start-4 row-span-3 z-10">
+                            <div className="w-64 h-64 rounded-full bg-black/80 border-2 border-dashed border-slate-200 flex items-center justify-center shadow-inner relative">
+                                  <Logo/>
+                                <div className="absolute inset-0 rounded-full bg-slate-100 animate-ping opacity-20 -z-10" />
+                            </div>
                         </div>
-                    </div>
 
-                    {/* Modules Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-64 gap-y-6 w-full max-w-5xl">
-                        {modules.map((module, index) => (
+                
+                        {modules.slice(0, 8).map((module, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: index * 0.05 }}
-                                className={`flex items-center gap-4 p-1 rounded-full text-white shadow-md ${module.color} 
-                  ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
+                                className={`${positions[index]} group z-20`}
                             >
-                                <div className="bg-white/20 p-3 rounded-full">
+                                <div className={`flex flex-col items-center justify-center w-32 h-32 rounded-full text-white shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl ${module.color} p-4 text-center border-4 border-white`}>
+                                    <div className="mb-1 bg-white/20 p-2 rounded-full">
+                                        {React.cloneElement(module.icon, { size: 20 })}
+                                    </div>
+                                    <span className="font-bold text-[11px] leading-tight">
+                                        {module.title}
+                                    </span>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    {/* Mobile/Tablet Grid - Simple & Clean */}
+                    <div className="lg:hidden grid grid-cols-2 md:grid-cols-3 gap-6">
+                        {modules.map((module, index) => (
+                            <motion.div
+                                key={`mob-${index}`}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                initial={{ opacity: 0, y: 20 }}
+                                className={`flex flex-col items-center p-6 rounded-2xl text-white ${module.color} shadow-lg`}
+                            >
+                                <div className="mb-3 bg-white/20 p-3 rounded-full">
                                     {module.icon}
                                 </div>
-                                <span className="flex-1 font-bold text-sm md:text-base px-4">
+                                <span className="font-bold text-sm text-center">
                                     {module.title}
                                 </span>
                             </motion.div>
