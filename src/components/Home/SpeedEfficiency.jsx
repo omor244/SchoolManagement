@@ -1,6 +1,6 @@
 
 import { motion } from 'framer-motion';
-import { metrics } from '../Data/Data';
+import { metrics } from '../Data/DataForHome';
 
 const SpeedEfficiency = () => {
    

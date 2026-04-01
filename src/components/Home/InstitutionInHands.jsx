@@ -1,6 +1,6 @@
 
 import { motion } from 'framer-motion';
-import { Features } from '../Data/Data';
+import { Features } from '../Data/DataForHome';
 
 const InstitutionInHands = () => {
    

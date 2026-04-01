@@ -1,15 +1,20 @@
 import Footer from "@/components/Footer/Footer";
+import Navbar from "@/components/Navber/Navber";
 import { Button } from "@/components/ui/button";
-import { Outlet } from "react-router";
+import { Outlet, useLocation } from "react-router";
 
 
 
 const MainLayOut = () => {
+
+    const location = useLocation()
+
+
     return (
         <div>
            
-            <header>
-                
+            <header className="bg-[#3a0463]">
+                {location.pathname !== "/" && <>  <Navbar />  </> }
             </header>
             <main>
                 <Outlet/>

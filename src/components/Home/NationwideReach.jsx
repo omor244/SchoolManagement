@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { divisions, getPosition } from '../Data/Data';
+import { divisions, getPosition } from '../Data/DataForHome';
 
 const NationwideReach = () => {
     // Division data with specific colors matching the UI

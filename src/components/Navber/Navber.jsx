@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Logo } from '../Logo/Logo';
 import { Button } from '../ui/button';
-import { Link } from 'react-router';
+import { Link, NavLink, useLocation } from 'react-router';
 import { Menu, X } from 'lucide-react'; // Icons for the mobile toggle
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -9,30 +9,31 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const navItems = [
-        { label: 'মূল পাতা', path: '/' },
-        { label: 'ফীচার', path: '/' },
+        { label: 'মূল পাতা', path: '/মূল-পাতা' },
+        { label: 'ফীচার', path: '/ফীচার' },
         { label: 'কোম্পানি', path: '/' },
         { label: 'সলিউশন', path: '/' },
         { label: 'পার্টনার', path: '/' }
     ];
-
+  
+    const location = useLocation()
     return (
-        <header className="relative px-26">
+    <header className="relative px-10 lg:px-28 ">
             {/* Desktop & Mobile Header Bar */}
-            <div className="relative  z-50 flex items-center justify-between px-6 py-5 md:px-16 border-b border-white/10  backdrop-blur-md">
+            <div className={`relative ${location.pathname == "/" ? "bg-[#3a0463] " : "bg-[#3a0463] "}  z-50 flex items-center justify-between  py-5 md:px-16 border-b border-white/10  backdrop-blur-md`}>
                 <Logo />
 
                 {/* Desktop Navigation */}
-                <nav className="hidden lg:flex items-center gap-10 text-sm font-medium text-slate-200">
+                <nav className="hidden lg:flex  items-center gap-10 text-sm font-medium text-slate-200">
                     {navItems.map((item) => (
-                        <Link
+                        <NavLink
                             key={item.label}
                             to={item.path}
-                            className="hover:text-white transition-colors relative group"
+                            className="hover:text-white   relative group"
                         >
                             {item.label}
                             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all group-hover:w-full" />
-                        </Link>
+                        </NavLink>
                     ))}
                 </nav>
 
@@ -54,7 +55,7 @@ const Navbar = () => {
                     </button>
                 </div>
             </div>
-
+            {/* bg-gradient-to-br  from-[#1e1b4b] via-[#3b0764] to-[#0f172a] */}
             {/* Mobile Menu Overlay */}
             <AnimatePresence>
                 {isOpen && (
@@ -65,7 +66,7 @@ const Navbar = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setIsOpen(false)}
-                            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
+                            className="fixed   inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
                         />
 
                         {/* Slide-in Menu */}
@@ -76,8 +77,8 @@ const Navbar = () => {
                             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
                             className="fixed right-0 top-0 h-screen w-[75%] max-w-xs bg-slate-900 border-l border-white/10 p-8 z-50 lg:hidden"
                         >
-                            <div className="flex flex-col h-full">
-                                <div className="mb-10">
+                            <div className="flex  flex-col h-full">
+                                <div className="mb-10 ">
                                     <Logo />
                                 </div>
 

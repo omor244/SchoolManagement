@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { modules, positions } from '../Data/Data';
+import { modules, positions } from '../Data/DataForHome';
 import { Logo } from '../Logo/Logo';
 
 const ModuleSection = () => {
@@ -29,7 +29,15 @@ const ModuleSection = () => {
 
                         <div className="col-start-4 col-span-3 row-start-4 row-span-3 z-10">
                             <div className="w-64 h-64 rounded-full bg-black/80 border-2 border-dashed border-slate-200 flex items-center justify-center shadow-inner relative">
-                                  <Logo/>
+                                <div className="flex items-center gap-2">
+                                    <div className="bg-white/10 p-2 rounded-xl border border-white/20">
+                                        <span className="text-xl">🏫</span>
+                                    </div>
+                                    <div className='text-white'>
+                                        <h1 className="text-xl font-bold tracking-tight">School<span className="text-purple-400">360</span></h1>
+                                        <p className="text-[10px] text-slate-300 font-light -mt-1">শৈক্ষিক প্রতিষ্ঠানের ডিজিটাল সমাধান</p>
+                                    </div>
+                                </div>
                                 <div className="absolute inset-0 rounded-full bg-slate-100 animate-ping opacity-20 -z-10" />
                             </div>
                         </div>

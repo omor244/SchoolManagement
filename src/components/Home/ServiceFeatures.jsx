@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { features } from '../Data/Data';
+import { features } from '../Data/DataForHome';
 
 
 const ServiceFeatures = () => {

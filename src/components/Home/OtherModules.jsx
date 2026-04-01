@@ -1,6 +1,6 @@
 
 import { motion } from 'framer-motion';
-import { moduless } from '../Data/Data';
+import { moduless } from '../Data/DataForHome';
 
 
 const OtherModules = () => {

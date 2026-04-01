@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { solutions } from '../Data/Data';
+import { solutions } from '../Data/DataForHome';
 
 const SinglePointSolution = () => {
     // Solutions data updated to use image paths instead of icons

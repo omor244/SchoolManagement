@@ -1,6 +1,6 @@
 
 import { motion } from 'framer-motion';
-import { benefitData } from '../Data/Data';
+import { benefitData } from '../Data/DataForHome';
 import { BenefitCard } from '../Card/BenefitCard';
 
 
