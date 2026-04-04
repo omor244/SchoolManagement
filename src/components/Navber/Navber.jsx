@@ -11,14 +11,15 @@ const Navbar = () => {
     const navItems = [
         { label: 'মূল পাতা', path: '/মূল-পাতা' },
         { label: 'ফীচার', path: '/ফীচার' },
-        { label: 'কোম্পানি', path: '/' },
-        { label: 'সলিউশন', path: '/' },
-        { label: 'পার্টনার', path: '/' }
+        // { label: 'কোম্পানি', path: '/' },
+        { label: 'সলিউশন', path: '/সলিউশন' },
+        { label: 'যোগাযোগ', path: '/যোগাযোগ' },
+        // { label: 'পার্টনার', path: '/' }
     ];
   
     const location = useLocation()
     return (
-    <header className="relative px-10 lg:px-28 ">
+    <div className="relative px-10 lg:px-28  ">
             {/* Desktop & Mobile Header Bar */}
             <div className={`relative ${location.pathname == "/" ? "bg-[#3a0463] " : "bg-[#3a0463] "}  z-50 flex items-center justify-between  py-5 md:px-16 border-b border-white/10  backdrop-blur-md`}>
                 <Logo />
@@ -107,7 +108,7 @@ const Navbar = () => {
                     </>
                 )}
             </AnimatePresence>
-        </header>
+        </div>
     );
 };
 
