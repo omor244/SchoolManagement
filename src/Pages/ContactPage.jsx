@@ -28,8 +28,19 @@ const ContactPage = () => {
 
                     {/* Left Side: Contact Info & Form */}
                     <div className="space-y-8">
+
                         {/* Contact Cards */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <Card className="border-none shadow-sm bg-white hover:shadow-md transition-shadow">
+                                <CardContent className="p-6 flex flex-col items-center text-center space-y-3">
+                                    <div className="p-3 bg-blue-100 rounded-full text-blue-600">
+                                        <MapPin size={20} />
+                                    </div>
+                                    <div className="text-xs font-bold text-slate-800">Sherpur, Rajshahi, BD</div>
+                                </CardContent>
+                            </Card>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <Card className="border-none shadow-sm bg-white hover:shadow-md transition-shadow">
                                 <CardContent className="p-6 flex flex-col items-center text-center space-y-3">
                                     <div className="p-3 bg-purple-100 rounded-full text-[#4a148c]">
@@ -48,14 +59,7 @@ const ContactPage = () => {
                                 </CardContent>
                             </Card>
 
-                            <Card className="border-none shadow-sm bg-white hover:shadow-md transition-shadow">
-                                <CardContent className="p-6 flex flex-col items-center text-center space-y-3">
-                                    <div className="p-3 bg-blue-100 rounded-full text-blue-600">
-                                        <MapPin size={20} />
-                                    </div>
-                                    <div className="text-xs font-bold text-slate-800">Sherpur, Rajshahi, BD</div>
-                                </CardContent>
-                            </Card>
+                          
                         </div>
 
                         {/* Contact Form */}
